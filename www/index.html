@@ -298,7 +298,8 @@
 
           m = parseInt(rest/60);
           s = parseInt(rest - m*60);
-          $("#time").html("経過時間：" + time + "秒");
+          var timem = parseInt(time/60);
+          $("#time").html("経過時間：" + timem + "分" + parseInt(time - timem*60) + "秒");
           $("#remain").html("残り時間： " + m + "分" + s + "秒");
           analog(rest);
         } else {
