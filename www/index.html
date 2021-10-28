@@ -44,6 +44,12 @@
         $('#btnE').click(function(e) {
             btnEClick(e);
         });
+        $('#btnF').click(function(e) {
+            btnFClick(e);
+        });
+        $('#btnG').click(function(e) {
+            btnGClick(e);
+        });
         init();
     });
     
@@ -175,6 +181,8 @@
         $('#btnC').prop('disabled', false);
         $('#btnD').prop('disabled', false);
         $('#btnE').prop('disabled', false);
+        $('#btnF').prop('disabled', false);
+        $('#btnG').prop('disabled', false);
         btnCClick(null);
     }
 
@@ -241,11 +249,32 @@
     }
 
     function btnEClick(e){
-      //<input type="number" id="minute" value=0 >
-      //(#"minute").value = 0;
-      //$("#minute").value = 0;
       document.getElementById( "minute" ).value = 0 ;
       document.getElementById( "second" ).value = 0 ;
+    }
+    function btnFClick(e){
+      //alarm();
+      active = false;
+      period = 60 * 5;
+      $("#time").html("経過時間： 0");
+      $("#remain").html("残り時間：" + period);
+      $("#btnA").prop("disabled",false);
+      $("#btnB").prop("disabled",true);
+      if(count == 1) {
+        count--;
+      }
+    }
+    function btnGClick(e){
+      //alarm();
+      active = false;
+      period = 60 * 10;
+      $("#time").html("経過時間： 0");
+      $("#remain").html("残り時間：" + period);
+      $("#btnA").prop("disabled",false);
+      $("#btnB").prop("disabled",true);
+      if(count == 1) {
+        count--;
+      }
     }
     
  
@@ -298,6 +327,8 @@
     <button id="btnC">Set</button>  
     <button id="btnD">3分</button>
     <button id="btnE">reset</button>
+    <button id="btnF">5分</button>
+    <button id="btnG">１０分</button>
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
 </body>
